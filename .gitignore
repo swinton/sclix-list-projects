@@ -1,2 +1,4 @@
 sclix_woof_darwin_arm64
 _bin
+bin
+.DS_Store

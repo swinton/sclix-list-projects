@@ -10,6 +10,8 @@ github.com/snyk/cli-extension-lib-go v0.0.0-20220728132237-0ced5623af32 h1:ylR5F
 github.com/snyk/cli-extension-lib-go v0.0.0-20220728132237-0ced5623af32/go.mod h1:AWlXeQJLA0dktpcBNQ7aDf8IwG9m8+4kpDa1TXg9bqQ=
 github.com/snyk/cli-extension-lib-go v0.0.0-20220811175831-cccd20997fed h1:n15AbxG44W8T2LQk31c0I8LutJADT8wPnTsf4Jlyg/U=
 github.com/snyk/cli-extension-lib-go v0.0.0-20220811175831-cccd20997fed/go.mod h1:AWlXeQJLA0dktpcBNQ7aDf8IwG9m8+4kpDa1TXg9bqQ=
+github.com/snyk/cli-extension-lib-go v0.0.0-20220812142728-616df3799bdf h1:Xa20YYfYR+RAHiKV6uirZNUVEm0d8I6+SI8VXdee3aI=
+github.com/snyk/cli-extension-lib-go v0.0.0-20220812142728-616df3799bdf/go.mod h1:AWlXeQJLA0dktpcBNQ7aDf8IwG9m8+4kpDa1TXg9bqQ=
 github.com/snyk/cli-extension-lib-go v0.0.1 h1:0AnvrmwZSbvhpg0Qrke1sRYE/D7Cz8q9VWXCJ8+uMmE=
 github.com/snyk/cli-extension-lib-go v0.0.1/go.mod h1:/CLh4Q94GRCgioMtViEr9eOULgxFezvJAEWLHECLa0w=
 github.com/snyk/cli/cliv2 v0.0.0-20220519133809-f8adccdf8c8f h1:6RZG9hMkig1SOBj8sqsvxPN281IV6nfeV7q6iaxGxz0=

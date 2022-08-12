@@ -15,12 +15,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	lang, err := extensionInput.Command.StringOptionValue("lang")
+	orgId, err := extensionInput.Command.StringOptionValue("org")
 	if err != nil {
 		fmt.Println("Invalid input")
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println("Woof in", lang)
+	fmt.Println("Woof in", orgId)
 	fmt.Println("Woof token:", extensionInput.Token)
 }

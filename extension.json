@@ -1,17 +1,18 @@
 {
-    "name": "sclix_woof",
-    "version": "0.1.0",
-    "description": "patch ascii art",
+    "name": "sclix-list-projects",
+    "description": "List Projects from Snyk API",
     "command": {
-        "name": "woof",
-        "description": "output patch ascii art",
-        "options": [{
-            "name": "lang",
-            "shorthand": "l",
-            "type": "string",
-            "description": "the language you want to woof in",
-            "required": false,
-            "default": "default-lang"
-        }]
+        "name": "list-projects",
+        "description": "List Projects from Snyk API",
+        "options": [
+            {
+                "name": "org",
+                "shorthand": "",
+                "type": "string",
+                "description": "Organization ID to query",
+                "required": false,
+                "default": ""
+            }
+        ]
     }
 }
