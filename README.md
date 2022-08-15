@@ -1,10 +1,20 @@
-# sclix-list-projects
+# Snyk CLI `list-projects` extension
 
 An example Snyk CLI Extension introducing a new `list-projects` command.
 
 ## Building an extension
 
-An extension must produce an appropriately named, os/architecture specific binary in an output folder name `_bin` when running `make build`.
+An extension must produce an appropriately named, os/architecture specific binary in an output folder name `_bin` when running `make build`. You can achieve this by running:
+
+```terminal
+make build install prefix=./bin/
+```
+
+You can execute the extension locally with Snyk CLI:
+
+```
+snyk list-projects --additional-extension-path=/path/to/this/extension/folder/sclix-list-projects
+```
 
 The format of the output files should be `<extension-name>_<OS>_<ARCH>`, where `<extension-name>` is the `name` in the `extension.json`.
 
