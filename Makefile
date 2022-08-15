@@ -16,7 +16,7 @@ ifeq ($(GOOS),windows)
 endif
 
 # some globally assembled variables
-APPLICATION_NAME = ""$(shell basename -s .git `git config --get remote.origin.url`)""
+APPLICATION_NAME = $(shell basename -s .git `git config --get remote.origin.url`)
 PLATFORM_STRING = $(GOOS)$(_SEPARATOR)$(GOARCH)
 EXECUTABLE_NAME = $(APPLICATION_NAME)$(_SEPARATOR)$(PLATFORM_STRING)$(_EXE_POSTFIX)
 
@@ -44,10 +44,12 @@ lint:
 $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
 
-$(BUILD_DIR)/$(EXECUTABLE_NAME): $(BUILD_DIR)
+SRCS = $(shell find $(WORKING_DIR) -type f -name '*.go')
+
+$(BUILD_DIR)/$(EXECUTABLE_NAME): $(BUILD_DIR) $(SRCS)
 	@echo "Building..."
 	@echo "$(LOG_PREFIX) Building ( $(BUILD_DIR)/$(EXECUTABLE_NAME) )"
-	@GOOS=$(GOOS) GOARCH=$(GOARCH) $(GOCMD) build -o $(BUILD_DIR)/$(EXECUTABLE_NAME) $(WORKING_DIR)/cmd/main.go
+	GOOS=$(GOOS) GOARCH=$(GOARCH) $(GOCMD) build -o $(BUILD_DIR)/$(EXECUTABLE_NAME) $(WORKING_DIR)/cmd/main.go
 
 .PHONY: build
 build: $(BUILD_DIR)/$(EXECUTABLE_NAME)
@@ -64,9 +66,9 @@ $(DESTDIR)$(bindir):
 
 .PHONY: install
 install: $(DESTDIR)$(bindir) build
-	@echo "$(LOG_PREFIX) Installing $(V2_EXECUTABLE_NAME) ( $(DESTDIR)$(bindir) )"
-	@cp $(BUILD_DIR)/$(EXECUTABLE_NAME) $(DESTDIR)$(bindir)
-	@cp ./extension.json $(DESTDIR)$(bindir)
+	@echo "$(LOG_PREFIX) Installing $(EXECUTABLE_NAME) ( $(DESTDIR)$(bindir) )"
+	@cp -f $(BUILD_DIR)/$(EXECUTABLE_NAME) $(DESTDIR)$(bindir)
+	@cp -f ./extension.json $(DESTDIR)$(bindir)
 
 .PHONY: help
 help:
