@@ -36,6 +36,16 @@ func mainE(extensionInput *cli_extension_lib_go.ExtensionInput) (err error) {
 	}
 	apiAuthHeader := "Token " + apiToken
 
+	// Check if more emoji requested
+	moreEmoji, err := extensionInput.Command.BoolOptionValue("more-emoji")
+	if err != nil {
+		return fmt.Errorf("Invalid input %v", err)
+	}
+
+	if moreEmoji {
+		fmt.Println("🚀")
+	}
+
 	// Check if user defined an OrgId they want to use
 	var orgId string
 	orgId, err = extensionInput.Command.StringOptionValue("org")

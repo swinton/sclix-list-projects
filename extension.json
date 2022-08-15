@@ -12,6 +12,14 @@
         "description": "Organization ID to query",
         "required": false,
         "default": ""
+      },
+      {
+        "name": "more-emoji",
+        "shorthand": "",
+        "type": "bool",
+        "description": "Use more emoji",
+        "required": false,
+        "default": false
       }
     ]
   }
